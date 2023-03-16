@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+</head>
+
+<body>
+    
+    <a-scene background="color: #000000">
+
+        <!--Camera-->
+        <a-entity position="0 0 15">
+            <a-camera></a-camera>
+        </a-entity>
+
+        <!-- <a-entity
+            sound="src: https://cdn.glitch.com/850dd813-e5e9-4dd0-9751-38981ae74172%2Ffh_space_discovery_-_earth_proud_music_preview(1).mp3?v=1604306441093; autoplay: true; volume: 0.9">
+        </a-entity> -->
+
+
+        <!--Sky-->
+        <a-sky src="https://images.unsplash.com/photo-1554034483-04fda0d3507b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxleHBsb3JlLWZlZWR8N3x8fGVufDB8fHx8&w=1000&q=80">
+
+        </a-sky>
+
+        
+
+        <!-- Flooring -->
+        <a-entity>
+            <a-plane position="0 -0.2 12" rotation="-90 0 0" width="10" height="5" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBSBoXIAH69ZJPqAeH3cX78itTA_4jKEwcsdfIvZl75Q&s"></a-plane>
+        </a-entity>
+
+        <!-- Carpet -->
+        <a-entity>
+            <a-plane position="0 -0.1 12" rotation="-90 0 0" width="5" height="2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0esdegU7JotXh_nXiHGReZIlPm8SmFyLEwAS2EYvcMbms97bfUmY4s3HRK0gcHlnTT_s&usqp=CAU"></a-plane>
+        </a-entity>
+        
+        <!-- Wall -->
+        <a-entity>
+            <a-plane position="0 2.3 10"  width="10" height="5" src="data:image/jpeg;base64,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"></a-plane>
+
+        </a-entity>
+
+        <!-- Ladder -->
+        <a-entity>
+            <a-cylinder position="1.8 1.8 13" radius="0.02" height="2" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1.4 1.8 13" radius="0.02" height="2" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1.6 2.5 13" rotation='0 0 90' radius="0.02" height="0.4" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1.6 2.2 13" rotation='0 0 90' radius="0.02" height="0.4" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1.6 1.9 13" rotation='0 0 90' radius="0.02" height="0.4" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1.6 1.6 13" rotation='0 0 90' radius="0.02" height="0.4" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1.6 1.3 13" rotation='0 0 90' radius="0.02" height="0.4" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1.6 1 13" rotation='0 0 90' radius="0.02" height="0.4" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+        </a-entity>
+
+        <!-- Book Shelf -->
+        <a-entity>
+            <a-box position="0 2 10" depth="2" width="5" height="4.1" src="https://images.unsplash.com/photo-1588580000645-4562a6d2c839?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9vayUyMHNoZWxmfGVufDB8fDB8fA%3D%3D&w=1000&q=80"></a-box>
+        </a-entity>
+
+        <!-- Chair -->
+        <a-entity>
+            <a-cylinder position="-1 0.9 13.5" radius="0.2" height="0.02" src="https://thumbs.dreamstime.com/b/leather-texture-chair-back-pattern-grey-color-43585942.jpg"></a-cylinder>
+            <a-cylinder position="-1 0.8 13.5" radius="0.02" height="0.2" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="-1 0.7 13.5" radius="0.1" height="0.02" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="-1.1 1.1 13.5" rotation='91 -1 -30' radius="0.15" height="0.03" src="https://thumbs.dreamstime.com/b/leather-texture-chair-back-pattern-grey-color-43585942.jpg"></a-cylinder>
+        </a-entity>
+
+        <!-- Chair No. 2 -->
+        <a-entity>
+            <a-cylinder position="1 0.9 13.5" radius="0.2" height="0.02" src="https://thumbs.dreamstime.com/b/leather-texture-chair-back-pattern-grey-color-43585942.jpg"></a-cylinder>
+            <a-cylinder position="1 0.8 13.5" radius="0.02" height="0.2" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1 0.7 13.5" radius="0.1" height="0.02" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="1.1 1.1 13.5" rotation='0 46 88' radius="0.15" height="0.03" src="https://thumbs.dreamstime.com/b/leather-texture-chair-back-pattern-grey-color-43585942.jpg"></a-cylinder>
+        </a-entity>        
+
+        <!-- Table -->
+        <a-entity>
+            <a-box position="0 0.3 12.5" depth="0.6" width="1.5" height="0.1" src="https://thumbs.dreamstime.com/b/kitchen-furniture-table-top-marble-texture-grey-black-honed-background-web-design-d-texturing-177656339.jpg"></a-box>
+            <a-cylinder position="0 0.1 12.5" radius="0.05" height="0.2" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+            <a-cylinder position="0 0 12.5" radius="0.1" height="0.02" src="https://media.istockphoto.com/id/1253255690/photo/old-metal-texture-background.jpg?s=612x612&w=0&k=20&c=dl0hGt4BZYXh6UjBeCg92v2gU1xVnJFL5r1IvEkJEqU="></a-cylinder>
+
+        </a-entity>
+
+        <!-- Clock -->
+        <a-entity>
+            <a-circle position="-1.63 2.2 13" radius="0.25" rotation="0 0 90" src="https://previews.123rf.com/images/mirexon/mirexon1502/mirexon150200128/36849718-clock-with-arrows-no-numbers-on-a-white-background.jpg"></a-circle>
+        </a-entity>
+
+
+    </a-scene>
+</body>
+
+</html>
